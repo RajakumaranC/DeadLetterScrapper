@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<PublishSingleFile>true</PublishSingleFile>
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<StartupObject>Program</StartupObject>
+		<Authors>Rajakumaran Chakaravarthy</Authors>
+		<Version>0.1.0</Version>
+		<Description>Simple console app to scrape deadletter messages in Azure service bus. Note: this doesn't process the messages. It only either peeks or recieves and saves to a file. </Description>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Messaging.ServiceBus" Version="7.11.1" />
+		<PackageReference Include="CsvHelper" Version="30.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
+		<PackageReference Include="Spectre.Console" Version="0.45.0" />
+		<PackageReference Include="Spectre.Console.Cli" Version="0.45.0" />
+	</ItemGroup>
+
+</Project>
